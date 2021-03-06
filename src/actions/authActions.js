@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { LOGIN_ENDPOINT, REGISTER_ENDPOINT } from '../helpers/endpoints';
-import { types } from './types';
+import { LOGIN_ENDPOINT } from '../shared/enpoints';
+import { types } from '../types/types';
 import jwt_decode from 'jwt-decode';
-import setAuthToken from '../helpers/setAuthToken';
+import setAuthToken from '../helpers/axios/setAuthToken';
 
 /* Login*/
 export const loginUser = (userData) => (dispatch) => {   
@@ -35,7 +35,7 @@ export const loginUser = (userData) => (dispatch) => {
 
 export const login = ({ user, loggedIn }) => {
     return {
-        type: type.authLogin,
+        type: types.authLogin,
         payload: { user, loggedIn }
     };
 }

@@ -4,10 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import store from './store/store';
 import NavbarComponent from './components/ui/NavbarComponent';
+import checkForToken from './helpers/checkForToken';
 
 const Post = React.lazy(() => import('./components/Post'), 'default');
 const SignIn = React.lazy(() => import('./components/SignIn'), 'default');
 const SignUp = React.lazy(() => import('./components/SignUp'), 'default');
+
+checkForToken(); //first time we check if there is a user logged in
 
 export const App = () => {
 	return (

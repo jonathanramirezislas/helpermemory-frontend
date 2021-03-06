@@ -1,7 +1,7 @@
 import jwt_decode from 'jwt-decode';
-import { logoutUser, setCurrentUser } from '../actions/authActions';
-import store from "../store";
-import setAuthToken from "./setAuthToken";
+import { logoutUser, login } from '../actions/authActions';
+import store from "../store/store";
+import setAuthToken from "./axios/setAuthToken";
 
 const checkForToken = () => {
     //if there is a user already logged in 
