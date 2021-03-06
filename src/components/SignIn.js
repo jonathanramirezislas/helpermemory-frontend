@@ -15,7 +15,9 @@ export default function SignIn() {
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
     const loggedIn = useSelector(state => state.auth.loggedIn);
+    const history = useHistory();
 
+    //if the user is already logged in
     useEffect(() => {
       if (loggedIn) {
         history.push("/");
