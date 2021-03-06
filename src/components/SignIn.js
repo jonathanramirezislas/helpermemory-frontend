@@ -2,16 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Alert } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import SignInForm from '../components/forms/SignInForm';
 import validator from 'validator';
+
+import SignInForm from '../components/forms/SignInForm';
+import { isObjEmpty } from '../helpers/isObjEmpty';
 
 
 export default function SignIn() {
    
-    //detect if a object is empty
-    const isObjEmpty = (obj) => {
-        return Object.keys(obj).length === 0 && obj.constructor === Object;
-    }
+    
     const [errors, setErrors] = useState({});
     const dispatch = useDispatch();
     const loggedIn = useSelector(state => state.auth.loggedIn);

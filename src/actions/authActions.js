@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOGIN_ENDPOINT } from '../shared/enpoints';
+import { LOGIN_ENDPOINT, REGISTER_ENDPOINT } from '../shared/enpoints';
 import { types } from '../types/types';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from '../helpers/axios/setAuthToken';
@@ -51,4 +51,17 @@ export const logoutUser = () => dispatch => {
         user: {},
         loggedIn: false 
     }));
+}
+
+
+export const registerUser = (userData) => dispatch => {
+    return new Promise((resolve, reject) => {
+        axios.post(REGISTER_ENDPOINT, userData, {
+            headers: {'Accept': 'application/json', 'Content-type': 'application/json'}
+        }).then(response => {
+            resolve(response);
+        }).catch(error => {
+            reject(error);
+        });
+    });
 }
