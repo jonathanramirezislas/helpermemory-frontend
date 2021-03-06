@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import store from './store/store';
 import NavbarComponent from './components/ui/NavbarComponent';
 import checkForToken from './helpers/checkForToken';
+import PrivateRoute from './routes/PrivateRoute';
+import UserPost from './components/UserPost';
 
 const Post = React.lazy(() => import('./components/Post'), 'default');
 const SignIn = React.lazy(() => import('./components/SignIn'), 'default');
@@ -24,6 +26,7 @@ export const App = () => {
 
 							<Route exact path="/signin" component={SignIn} />
 							<Route exact path="/signup" component={SignUp} />
+							<PrivateRoute exact path="/posts" component={UserPost}></PrivateRoute>
 						</Switch>
 					</Suspense>
 				</Router>

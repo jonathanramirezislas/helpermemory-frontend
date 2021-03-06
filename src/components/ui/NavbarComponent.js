@@ -1,15 +1,13 @@
 import React from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from '../../actions/authActions';
 
-
 export default function NabvarComponent() {
-
-	const loggedIn = useSelector(state => state.auth.loggedIn);
-    const user = useSelector(state => state.auth.user);
-    const dispatch = useDispatch();
+	const loggedIn = useSelector((state) => state.auth.loggedIn);
+	const user = useSelector((state) => state.auth.user);
+	const dispatch = useDispatch();
 
 	return (
 		<Navbar bg="dark" variant="dark" expand="lg">
@@ -31,8 +29,12 @@ export default function NabvarComponent() {
 						</>
 					) : (
 						<NavDropdown id="menu-dropdown">
-							<NavDropdown.Item>My Posts</NavDropdown.Item>
-							<NavDropdown.Item onClick={() => dispatch(logoutUser())}>Log out</NavDropdown.Item>
+							<NavDropdown.Item as={NavLink} to={'/posts'}>
+								My Posts
+							</NavDropdown.Item>
+							<NavDropdown.Item onClick={() => dispatch(logoutUser())}>
+								Log out
+							</NavDropdown.Item>
 						</NavDropdown>
 					)}
 				</Nav>
