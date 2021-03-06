@@ -39,3 +39,16 @@ export const login = ({ user, loggedIn }) => {
         payload: { user, loggedIn }
     };
 }
+
+
+export const logoutUser = () => dispatch => {
+	//rome token from localStorage
+	localStorage.removeItem('jwtToken');
+	//remove the token from headers from axios
+    setAuthToken(false);
+	//clean the store the user
+    dispatch(login({
+        user: {},
+        loggedIn: false 
+    }));
+}
