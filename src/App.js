@@ -8,7 +8,7 @@ import checkForToken from './helpers/checkForToken';
 import PrivateRoute from './routes/PrivateRoute';
 import UserPost from './components/UserPost';
 
-const Post = React.lazy(() => import('./components/Post'), 'default');
+const Posts = React.lazy(() => import('./components/Posts'), 'default');
 const SignIn = React.lazy(() => import('./components/SignIn'), 'default');
 const SignUp = React.lazy(() => import('./components/SignUp'), 'default');
 
@@ -22,7 +22,7 @@ export const App = () => {
 					<NavbarComponent />
 					<Suspense fallback={<div>Loading</div>}>
 						<Switch>
-							<Route exact path="/" component={Post}></Route>
+							<Route exact path="/" component={Posts}></Route>
 
 							<Route exact path="/signin" component={SignIn} />
 							<Route exact path="/signup" component={SignUp} />

@@ -21,7 +21,7 @@ export default function NabvarComponent() {
 					{!loggedIn ? (
 						<>
 							<Nav.Link as={NavLink} to={'/signup'}>
-								Creat account
+								Create account
 							</Nav.Link>
 							<Nav.Link as={NavLink} to={'/signin'}>
 								Sign in

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Alert } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import {  loginUser } from '../actions/authActions';
+import { Link, useHistory} from 'react-router-dom';
 import validator from 'validator';
 
 import SignInForm from '../components/forms/SignInForm';
@@ -22,6 +23,7 @@ export default function SignIn() {
         history.push("/");
       }
     }); 
+
 
     const login = ({ email, password }) => {
         const errors = {};

@@ -6,7 +6,9 @@ export default function SignInForm({ errors, onSubmitLogin }) {
 	const [password, setPassword] = useState('');
 
 	const submitForm = (e) => {
+
 		e.preventDefault();
+		console.log("login<---")
 		onSubmitLogin({ email, password }); //send to the father
 	};
 

@@ -6,7 +6,7 @@ import validator from 'validator';
 
 import SignUpForm from '../components/forms/SignUpForm';
 import { isObjEmpty } from '../helpers/isObjEmpty';
-import { registerUser, loginUser } from '../';
+import { registerUser, loginUser } from '../actions/authActions';
 import { useHistory } from 'react-router-dom';
 
 const SignUp = () => {
