@@ -16,6 +16,7 @@ export const loginUser = (userData) => (dispatch) => {
 				const { authorization } = response.headers;
 				localStorage.setItem('jwtToken', authorization);
 
+				//set token to axios to each request
 				setAuthToken(authorization);
 
 				//decode token 

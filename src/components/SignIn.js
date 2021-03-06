@@ -35,16 +35,16 @@ export default function SignIn() {
         }
 
         if (!isObjEmpty(errors)) {//if there are errors save the errors
-            setErrors(errors); 
-            return;
+            setErrors(errors);  //errors will show in the form
+            return; //stop the method
         }
 
         dispatch(loginUser({ email, password }))
-        .then(response => {
-
+        .then(response => { //evething is ok
+                
         })
         .catch(err => {                
-            setErrors({ auth: "No se puede iniciar sesion con esos credenciales" });
+            setErrors({ auth: "Check your email and password" });
         });
        
     }
