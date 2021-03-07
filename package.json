@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@popperjs/core": "^2.9.0",
     "@testing-library/react": "^11.2.3",
     "autoprefixer": "^10.2.4",
     "axios": "^0.21.1",

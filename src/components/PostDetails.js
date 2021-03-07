@@ -2,10 +2,12 @@ import React, { useState, useEffect }  from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import { useParams, useHistory } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { Card, Jumbotron, Button } from 'react-bootstrap';
 import { Prism as SystaxHighlighter } from 'react-syntax-highlighter';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+
+import { toast } from 'react-toastify';
+
 
 import { downloadTextAsFile } from '../helpers/downloadTextAsFile';
 import { POST_DETAILS_ENDPOINT } from '../shared/enpoints';
@@ -16,6 +18,14 @@ export default function PostDetails() {
     const [ post, setPost ] = useState(null);
     const history = useHistory();
     
+    const notify = () =>{
+       
+        toast.info("Copy to clipboard", {
+            position: toast.POSITION.BOTTOM_CENTER,
+            autoClose: 2000
+        });
+    } 
+
     useEffect(() => {
         axios.get(`${POST_DETAILS_ENDPOINT}/${id}`).then(response => {
             setPost(response.data);            
@@ -43,12 +53,7 @@ export default function PostDetails() {
                                 downloadTextAsFile(post.postId, post.content)
                             }}>Download</Button>
                         <CopyToClipboard
-                            onCopy={() => {
-                                toast.info("Copy to clipboard", {
-                                    position: toast.POSITION.BOTTOM_CENTER,
-                                    autoClose: 2000
-                                });
-                            }}
+                            onCopy={notify}
                             text={post.content}
                         >
                             <Button 
@@ -63,6 +68,7 @@ export default function PostDetails() {
                         </SystaxHighlighter>                        
                     </Card.Body>
                 </Card>
+               
             </>
             ) }
         </div>
