@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import NavbarComponent from './components/ui/NavbarComponent';
 import PostDetails from './components/PostDetails';
-import UserPost from './components/UserPost';
+import UserPost from './components/UserPosts';
 import checkForToken from './helpers/checkForToken';
 import PrivateRoute from './routes/PrivateRoute';
 import store from './store/store';
