@@ -13,8 +13,6 @@ import {  PUBLIC_POSTS_ENDPOINT } from '../shared/enpoints';
         axios.get(PUBLIC_POSTS_ENDPOINT).then(response => {
             setPosts(response.data);
             setFetching(false);
-            console.log('sss')
-            console.log(response.data)
         }).catch(e => {
             setFetching(false);
         })

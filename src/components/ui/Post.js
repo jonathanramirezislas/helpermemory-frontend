@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 
  const Post=({ post, renderControls })=> {
@@ -7,7 +8,8 @@ import moment from 'moment';
         <Card className="mb-4">
             <Card.Body>
                 <Card.Title>
-{ post.title }
+                <Link to={`/post/${post.postId}`}>{ post.title }</Link>
+                   
                 </Card.Title>
                 <Card.Text>
                    Owner  { post.user.firstName }, { moment(post.createdAt).fromNow() }
