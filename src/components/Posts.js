@@ -1,7 +1,10 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import Post from './ui/Post';
+import PlaceHolder from './ui/PlaceHolder';
 import {  PUBLIC_POSTS_ENDPOINT } from '../shared/enpoints';
+import { Jumbotron } from 'react-bootstrap';
+import PlaceHolder from './ui/PlaceHolder';
 
 
  const Posts = () => {
@@ -20,7 +23,10 @@ import {  PUBLIC_POSTS_ENDPOINT } from '../shared/enpoints';
 
     return (
         <div>
-            <h1>Posts</h1>
+                <Jumbotron>
+                <h1>Ultimos posts publicos</h1>
+            </Jumbotron>
+            { fetching && <PlaceHolder/> }
             <div>
                 { posts.map(post => <Post key={post.postId} post={post} renderControls={false}></Post>) }
             </div>

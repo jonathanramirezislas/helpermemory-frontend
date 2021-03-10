@@ -8097,6 +8097,11 @@
   dependencies:
     "find-up" "^4.0.0"
 
+"placeholder-loading@^0.3.0":
+  "integrity" "sha512-L/ofMvhtvYop06C+Bxzsjoc3PzkcSuKvd7h6SLrMBHOae+Byvyf2ESvNueVb5HZGic/Z5Zz7CDyi2yzV2mVrCw=="
+  "resolved" "https://registry.npmjs.org/placeholder-loading/-/placeholder-loading-0.3.0.tgz"
+  "version" "0.3.0"
+
 "pngquant-bin@^6.0.0":
   "integrity" "sha512-oXWAS9MQ9iiDAJRdAZ9KO1mC5UwhzKkJsmetiu0iqIjJuW7JsuLhmc4JdRm7uJkIWRzIAou/Vq2VcjfJwz30Ow=="
   "resolved" "https://registry.npmjs.org/pngquant-bin/-/pngquant-bin-6.0.0.tgz"

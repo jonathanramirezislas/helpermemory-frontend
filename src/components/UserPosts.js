@@ -4,6 +4,7 @@ import Post from './ui/Post';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserPosts } from '../actions/postActions';
 import { toast } from 'react-toastify';
+import PlaceHolder from './ui/PlaceHolder';
 
 const UserPosts= () => {
    
@@ -33,7 +34,7 @@ const UserPosts= () => {
             <Jumbotron>
                 <h1>My posts</h1>
             </Jumbotron>
-            
+            { fetching && <PlaceHolder/> }
             { !fetching && posts.length === 0 && <div>There are not private post</div>}
             <div>
                 { posts.map(post => <Post key={post.postId} post={post} renderControls={true} ></Post>) }

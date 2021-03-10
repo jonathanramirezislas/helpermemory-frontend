@@ -14,6 +14,12 @@ import { exposures } from './../../helpers/exposures';
                     <Badge variant="secondary" className="mr-2">{ post.exposure.type }</Badge>
                     { post.expired && post.exposure.id === exposures.PUBLIC && <Badge variant="danger" className="mr-2">Expiro</Badge> }
                 </div>
+                <div>
+                    <Button variant="primary" size="sm" className="mr-2"
+                        as={NavLink} to={`editpost/${post.postId}`}
+                    >Edit</Button>
+                    <Button variant="danger" size="sm" className="mr-2" >Delete</Button>
+                </div>
             </Card.Header> }
             <Card.Body>
                 <Card.Title>
