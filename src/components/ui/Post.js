@@ -3,6 +3,7 @@ import { Card, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { exposures } from './../../helpers/exposures';
+import DeletePostButton from './DeletePostButton';
 
                     //rendercontrols for owner of post
  const Post=({ post, renderControls })=> {
@@ -18,7 +19,7 @@ import { exposures } from './../../helpers/exposures';
                     <Button variant="primary" size="sm" className="mr-2"
                         as={NavLink} to={`editpost/${post.postId}`}
                     >Edit</Button>
-                    <Button variant="danger" size="sm" className="mr-2" >Delete</Button>
+                   <DeletePostButton postId={post.postId} title={post.title}></DeletePostButton>
                 </div>
             </Card.Header> }
             <Card.Body>
