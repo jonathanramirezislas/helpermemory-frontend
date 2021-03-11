@@ -5,6 +5,7 @@ import PlaceHolder from './ui/PlaceHolder';
 import {  PUBLIC_POSTS_ENDPOINT } from '../shared/enpoints';
 import { Jumbotron } from 'react-bootstrap';
 import PlaceHolder from './ui/PlaceHolder';
+import NoPosts from './ui/NoPostMessage';
 
 
  const Posts = () => {
@@ -27,6 +28,7 @@ import PlaceHolder from './ui/PlaceHolder';
                 <h1>Ultimos posts publicos</h1>
             </Jumbotron>
             { fetching && <PlaceHolder/> }
+            { !fetching && posts.length === 0 && <NoPosts text=" There are not public posts yet!"></NoPosts> }
             <div>
                 { posts.map(post => <Post key={post.postId} post={post} renderControls={false}></Post>) }
             </div>
