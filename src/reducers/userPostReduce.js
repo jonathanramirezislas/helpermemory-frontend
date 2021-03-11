@@ -1,5 +1,6 @@
 import { types } from "../types/types";
 
+                            
 const initialState = {posts: [], fetched: false};
 
  const userPostReducer=(state = initialState, action)=> {

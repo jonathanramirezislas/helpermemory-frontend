@@ -15,15 +15,15 @@ const UserPosts= () => {
 
     useEffect(() => {
        async function fetchedPosts() {
-            
+        if (!fetched) { //if we did't fecth the data 
                 try {
                     setFetching(true);
-                    await dispatch(getUserPosts());
+                    await dispatch(getUserPosts());//gte user's post
                     setFetching(false);
-                }catch(err) {
+                }catch(err) { //error from back end
                     toast.error(err.response.data.message, { position: toast.POSITION.BOTTOM_CENTER, autoClose: 2000 });
                 }
-            
+            }
        }
        fetchedPosts();
     }, [dispatch, fetched]);

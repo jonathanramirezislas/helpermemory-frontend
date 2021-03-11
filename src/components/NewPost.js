@@ -38,7 +38,7 @@ import { getUserPosts } from '../actions/postActions';
 
         try {
             const response = await axios.post(CREATE_POST_ENDPOINT, { title, content, expirationTime, exposureId });
-            await dispatch(getUserPosts());
+            await dispatch(getUserPosts());//get again the posts to add the new post to the store
             toast.info("The post was created", { position: toast.POSITION.BOTTOM_CENTER, autoClose: 2000 });
             history.push(`/post/${response.data.postId}`) //redirect to details of post wich was created
         } catch(err) {
