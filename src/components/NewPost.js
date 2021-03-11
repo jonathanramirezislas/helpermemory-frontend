@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Alert } from 'react-bootstrap';
-import NewPostForm from './forms/NewPostForm';
+import PostForm from './forms/PostForm';
 import validator from 'validator';
 import { isObjEmpty } from '../helpers/isObjEmpty';
 import { useHistory } from 'react-router-dom';
@@ -55,7 +55,7 @@ import { getUserPosts } from '../actions/postActions';
                         { errors.newpost && <Alert variant="danger">{ errors.auth }</Alert> }
 
                         <h3>Create a post</h3><hr></hr>
-                        <NewPostForm errors={errors} onSubmitCallback={createPost}></NewPostForm>
+                        <PostForm errors={errors} onSubmitCallback={createPost}></PostForm>
                        
                     </Card>
                 </Col>

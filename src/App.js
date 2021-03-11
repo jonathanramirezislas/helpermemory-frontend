@@ -17,6 +17,7 @@ import NewPost from './components/NewPost';
 const Posts = React.lazy(() => import('./components/Posts'), 'default');
 const SignIn = React.lazy(() => import('./components/SignIn'), 'default');
 const SignUp = React.lazy(() => import('./components/SignUp'), 'default');
+import EditPost from './components/EditPost';
 
 checkForToken(); //first time we check if there is a user logged in
 
@@ -38,6 +39,7 @@ export const App = () => {
 								<Route exact path="/post/:id" component={PostDetails} />
 								<PrivateRoute exact path="/posts" component={UserPost}></PrivateRoute>
 								<PrivateRoute exact path="/newpost" component={NewPost}></PrivateRoute>
+								<PrivateRoute exact path="/editpost/:id" component={EditPost}></PrivateRoute>
 							</Switch>
 						</Suspense>
 					</Container>

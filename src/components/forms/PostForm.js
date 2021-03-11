@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { exposures } from '../../helpers/exposures';
+//From for edit and create a post
+export default function PostForm({ errors, onSubmitCallback, 
+                                    pTitle = "", pContent = "", pExposureId = exposures.PUBLIC,
+                                    pExpirationTime = 60, textButton = "Crear Post" }) {
+            
+    const [title, setTitle] = useState(pTitle);
+    const [content, setContent] = useState(pContent);
+    const [expirationTime, setExpirationTime] = useState(pExpirationTime);
+    const [exposureId, setExposureId] = useState(pExposureId);
 
-export default function NewPostForm({ errors, onSubmitCallback}) {
-
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
-    const [expirationTime, setExpirationTime] = useState(60);
-    const [exposureId, setExposureId] = useState(exposures.PUBLIC);
 
     const submitForm = (e) => {
         e.preventDefault();
