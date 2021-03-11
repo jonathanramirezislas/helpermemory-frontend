@@ -16,7 +16,9 @@ export default function NabvarComponent() {
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls="main-menu"></Navbar.Toggle>
 			<Navbar.Collapse id="main-menu">
-				<Nav className="mr-auto">{loggedIn && <Nav.Link>Create a Post</Nav.Link>}</Nav>
+				<Nav className="mr-auto">
+				{ loggedIn && <Nav.Link as={NavLink} to={'/newpost'}>Crear Post</Nav.Link> }
+					</Nav>
 				<Nav>
 					{!loggedIn ? (
 						<>

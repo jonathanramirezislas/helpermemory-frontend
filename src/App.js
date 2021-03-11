@@ -6,12 +6,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import NavbarComponent from './components/ui/NavbarComponent';
-import PostDetails from './components/PostDetails';
-import UserPost from './components/UserPosts';
 import checkForToken from './helpers/checkForToken';
 import PrivateRoute from './routes/PrivateRoute';
 import store from './store/store';
 
+import UserPost from './components/UserPosts';
+import PostDetails from './components/PostDetails';
+import NewPost from './components/NewPost';
 const Posts = React.lazy(() => import('./components/Posts'), 'default');
 const SignIn = React.lazy(() => import('./components/SignIn'), 'default');
 const SignUp = React.lazy(() => import('./components/SignUp'), 'default');
@@ -35,6 +36,7 @@ export const App = () => {
 								<Route exact path="/signup" component={SignUp} />
 								<Route exact path="/post/:id" component={PostDetails} />
 								<PrivateRoute exact path="/posts" component={UserPost}></PrivateRoute>
+								<PrivateRoute exact path="/newpost" component={NewPost}></PrivateRoute>
 							</Switch>
 						</Suspense>
 					</Container>
