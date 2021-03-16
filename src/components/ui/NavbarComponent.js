@@ -30,7 +30,10 @@ export default function NabvarComponent() {
 							</Nav.Link>
 						</>
 					) : (
-						<NavDropdown id="menu-dropdown">
+						<NavDropdown 
+						id="menu-dropdown"  
+						alignRight
+						>
 							<NavDropdown.Item as={NavLink} to={'/posts'}>
 								My Posts
 							</NavDropdown.Item>

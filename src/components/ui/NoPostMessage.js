@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../assets/no_data.sgv';
+import img from '../../assets/no_data.svg';
 import '../../styles/styles.css';
 
  const NoPosts=({ text })=> {

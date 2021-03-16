@@ -1,11 +1,10 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import Post from './ui/Post';
-import PlaceHolder from './ui/PlaceHolder';
-import {  PUBLIC_POSTS_ENDPOINT } from '../shared/enpoints';
-import { Jumbotron } from 'react-bootstrap';
-import PlaceHolder from './ui/PlaceHolder';
-import NoPosts from './ui/NoPostMessage';
+import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import Post from './ui/Post'
+import {  PUBLIC_POSTS_ENDPOINT } from '../shared/enpoints'
+import { Jumbotron } from 'react-bootstrap'
+import PlaceHolder from './ui/PlaceHolder'
+import NoPosts from './ui/NoPostMessage'
 
 
  const Posts = () => {
@@ -28,9 +27,9 @@ import NoPosts from './ui/NoPostMessage';
                 <h1>Ultimos posts publicos</h1>
             </Jumbotron>
             { fetching && <PlaceHolder/> }
-            { !fetching && posts.length === 0 && <NoPosts text=" There are not public posts yet!"></NoPosts> }
+            { !fetching && posts.length === 0 && <NoPosts text="There are not public posts yet!"></NoPosts> }
             <div>
-                { posts.map(post => <Post key={post.postId} post={post} renderControls={false}></Post>) }
+                { posts && posts.map(post => <Post key={post.postId} post={post} renderControls={false}></Post>) }
             </div>
         </div>
     )
