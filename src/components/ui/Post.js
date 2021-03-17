@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, Badge } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Card, Badge, Button} from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 import moment from 'moment';
 import { exposures } from './../../helpers/exposures';
 import DeletePostButton from './DeletePostButton';

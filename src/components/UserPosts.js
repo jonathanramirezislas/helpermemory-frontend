@@ -38,7 +38,6 @@ const UserPosts= () => {
             { fetching && <PlaceHolder/> }
             { !fetching && posts.length === 0 && <NoPosts text=" There are not private posts , create one!"></NoPosts> }
             <div>
-                <h1>s</h1>
                 { posts.map(post => <Post key={post.postId} post={post} renderControls={true} ></Post>) }
             </div>
         </div>
